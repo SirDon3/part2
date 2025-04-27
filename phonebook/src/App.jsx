@@ -9,7 +9,7 @@ const App = () => {
   const handleFormSubmission = (e) => {
     e.preventDefault()
 
-    const firstName = persons.find(obj => obj.name === newName);
+    const firstName = persons.find(person => person.name === newName);
     if(firstName){
       alert(`${newName} is already added to phonebook`)
     }else{
