@@ -8,14 +8,22 @@ const App = () => {
 
   const handleFormSubmission = (e) => {
     e.preventDefault()
-    const nameObject = {name: newName}
-    setPersons(prev => [...prev, nameObject ])
-    setNewName('')
+
+    const firstName = persons.find(person => person.name === newName);
+    if(firstName){
+      alert(`${newName} is already added to phonebook`)
+    }else{
+      const nameObject = {name: newName}
+      setPersons(prev => [...prev, nameObject ])
+      setNewName('')
+    }
+
   }
 
   const handleNameChange = (e) => {
     setNewName(e.target.value)
   }
+
 
   return (
     <div>
